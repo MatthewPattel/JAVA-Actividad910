@@ -18,9 +18,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * */
 @Configuration
 @EnableWebMvc
-//Escribe tu código aquí {
-
-//} 
+@ComponentScan(basePackages = "me.jmll.utm.web", userDefaultFilters = false, includeFilters = @ComponentScan.Filter(Controller.class))
 public class ServletContextConfig extends WebMvcConfigurerAdapter {
 	
 	/**
@@ -38,12 +36,15 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
 	 * 3(c) Resuelve vistas seleccionadas al interpretar .jsp por @Controllers 
 	 * en el directorio /WEB-INF/views
 	 * */
-	// Escribe tu código aquí {
-
-	// } 
+	@Bean 
     public ViewResolver getViewResolver(){
-		// Escribe tu código aquí {
-
-		// } 
+		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+		resolver.setViewClass(JstlView.class);
+		resolver.setPrefix("/WEB-INF/views");
+		resolver.setSuffix(".jsp");
+		return resolver;
 	}
 }
+
+
+

@@ -50,11 +50,14 @@ public class HomeController {
 	}
 	
 	/** 2(a) Inyectar HelloService en HomeController */
-	// Escribe tu código aquí {
-
-	// } 
+	
+	@Inject
 	public void setHelloService(HelloService helloService)
     {
         this.helloService = helloService;
     }
 }
+
+
+
+

@@ -11,9 +11,9 @@ import org.springframework.stereotype.Controller;
  *  org.springframework.stereotype.Controller
  * */
 @Configuration
-// Escribe tu código aquí {
-
-// } 
+@ComponentScan(basePackages = "me.jmll.utm.web", excludeFilters = @ComponentScan.Filter(Controller.class))
 public class RootContextConfig {
 
 }
+
+
