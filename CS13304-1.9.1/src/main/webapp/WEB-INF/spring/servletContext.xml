@@ -25,13 +25,16 @@
 	</bean>
 	
 	<!-- 2(a) Habilita la configuración de Spring por medio de anotaciones -->
-    <!-- 
-    	Escribe tu código aquí
-     -->
+    <context:annotation-config/>
     
     <!-- 2(b) Establece el escaneo de componentes del paquete me.jmll.utm -->
-    <!-- 
-    	Escribe tu código aquí
-     -->
+    <context:component-scan base-package="me.jmll.utm">
+    	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 	
 </beans>
+
+
+
+
+

@@ -49,8 +49,13 @@ public class HomeController {
 	}
 	
 	/* 4(a) Inyectar HelloService en HomeController */
+	@Autowired
+	@Qualifier("bean")
 	public void setHelloService(HelloService helloService)
     {
         this.helloService = helloService;
     }
 }
+
+
+

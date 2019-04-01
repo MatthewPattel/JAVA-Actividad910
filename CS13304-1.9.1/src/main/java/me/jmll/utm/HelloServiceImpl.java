@@ -1,6 +1,10 @@
 package me.jmll.utm;
 
 /* 3(a) Define que Spring cree una instancia de HelloServiceImpl */
+@Component
+@Qualifier("bean")
+
+
 public class HelloServiceImpl implements HelloService {
 
 	@Override
@@ -9,3 +13,4 @@ public class HelloServiceImpl implements HelloService {
 	}
 
 }
+
